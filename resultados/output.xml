@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220504 17:37:02.851" rpa="false" schemaversion="3">
+<suite id="s1" name="Evino Teste" source="C:\Users\karin\Desktop\QA\Evino\evino_teste.robot">
+<test id="s1-t1" name="Caso de teste 01 - Verificar se aparece o contador de gotas corretamente" line="9">
+<kw name="Abrir o navegador" library="evino_resoucers" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220504 17:37:03.035" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220504 17:37:03.035" endtime="20220504 17:37:04.107"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220504 17:37:04.107" endtime="20220504 17:37:04.237"/>
+</kw>
+<status status="PASS" starttime="20220504 17:37:03.034" endtime="20220504 17:37:04.238"/>
+</kw>
+<kw name="Dado que estou na home page da Evino.com.br com usuario cadastrado" library="evino_resoucers">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220504 17:37:04.240" level="INFO">Opening url 'https://www.evino.com.br/'</msg>
+<status status="PASS" starttime="20220504 17:37:04.240" endtime="20220504 17:37:06.895"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${CARRINHO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220504 17:37:06.895" endtime="20220504 17:37:06.914"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=(//div[@class='clearfix'])[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220504 17:37:06.914" endtime="20220504 17:37:07.557"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=onesignal-slidedown-cancel-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220504 17:37:07.557" level="INFO">Clicking button 'onesignal-slidedown-cancel-button'.</msg>
+<status status="PASS" starttime="20220504 17:37:07.557" endtime="20220504 17:37:07.610"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>locator=onesignal-slidedown-allow-button</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<msg timestamp="20220504 17:37:08.991" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<status status="PASS" starttime="20220504 17:37:07.610" endtime="20220504 17:37:09.226"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//i[@class='ico ev-remove']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220504 17:37:09.226" endtime="20220504 17:37:09.243"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@placeholder='Digite seu e-mail']</arg>
+<arg>text=${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220504 17:37:09.244" level="INFO">Typing text 'karintrindade1910@gmail.com' into text field '//input[@placeholder='Digite seu e-mail']'.</msg>
+<status status="PASS" starttime="20220504 17:37:09.243" endtime="20220504 17:37:09.332"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[contains(.,'Entrar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220504 17:37:09.332" level="INFO">Clicking button '//button[contains(.,'Entrar')]'.</msg>
+<status status="PASS" starttime="20220504 17:37:09.332" endtime="20220504 17:37:09.399"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//a[@class='Typo--medium Typo--medium-weight UserAccountNavigation__link'][contains(.,'Minha Conta')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220504 17:37:09.399" endtime="20220504 17:37:10.216"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220504 17:37:10.579" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220504 17:37:10.216" endtime="20220504 17:37:10.579"/>
+</kw>
+<status status="PASS" starttime="20220504 17:37:04.239" endtime="20220504 17:37:10.579"/>
+</kw>
+<kw name="Quando acrescento um vinho no carrinho" library="evino_resoucers">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=(//span[contains(.,'Vinhos')])[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220504 17:37:10.581" endtime="20220504 17:37:10.598"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=(//span[contains(.,'Vinhos')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220504 17:37:10.599" level="INFO">Clicking element '(//span[contains(.,'Vinhos')])[1]'.</msg>
+<status status="PASS" starttime="20220504 17:37:10.598" endtime="20220504 17:37:10.724"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//div[contains(@class,'HeaderProductsQuantity')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220504 17:37:10.724" endtime="20220504 17:37:10.740"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=(//button[contains(.,'Adicionar')])[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220504 17:37:10.740" endtime="20220504 17:37:11.446"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=(//button[contains(.,'Adicionar')])[1]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220504 17:37:11.447" level="INFO">Clicking button '(//button[contains(.,'Adicionar')])[1]'.</msg>
+<status status="PASS" starttime="20220504 17:37:11.447" endtime="20220504 17:37:11.588"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${CARRINHO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220504 17:37:11.588" endtime="20220504 17:37:15.509"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220504 17:37:15.738" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220504 17:37:15.509" endtime="20220504 17:37:15.738"/>
+</kw>
+<status status="PASS" starttime="20220504 17:37:10.581" endtime="20220504 17:37:15.739"/>
+</kw>
+<kw name="E clico no icone do carrinho" library="evino_resoucers">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${CARRINHO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220504 17:37:15.740" level="INFO">Clicking element '//span[@class='CartNavigation__quantity']'.</msg>
+<status status="PASS" starttime="20220504 17:37:15.740" endtime="20220504 17:37:15.836"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220504 17:37:16.064" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220504 17:37:15.836" endtime="20220504 17:37:16.064"/>
+</kw>
+<status status="PASS" starttime="20220504 17:37:15.739" endtime="20220504 17:37:16.064"/>
+</kw>
+<kw name="Então o contador de gotas deve aparecer" library="evino_resoucers">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//i[contains(@class,'ico ev-gift gift')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220504 17:37:16.065" endtime="20220504 17:37:16.516"/>
+</kw>
+<status status="PASS" starttime="20220504 17:37:16.064" endtime="20220504 17:37:16.516"/>
+</kw>
+<kw name="Fechar o navegador" library="evino_resoucers" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220504 17:37:16.625" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220504 17:37:16.517" endtime="20220504 17:37:16.625"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220504 17:37:16.625" endtime="20220504 17:37:18.812"/>
+</kw>
+<status status="PASS" starttime="20220504 17:37:16.516" endtime="20220504 17:37:18.812"/>
+</kw>
+<status status="PASS" starttime="20220504 17:37:03.034" endtime="20220504 17:37:18.812"/>
+</test>
+<doc>Essa suite testa o site da Evino.com.br</doc>
+<status status="PASS" starttime="20220504 17:37:02.851" endtime="20220504 17:37:18.812"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Evino Teste">Evino Teste</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
